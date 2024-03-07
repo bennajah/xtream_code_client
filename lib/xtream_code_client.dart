@@ -14,4 +14,3 @@ export 'src/model/user_info.dart';
 export 'src/model/vod_info.dart';
 export 'src/model/vod_items.dart';
 export 'src/xtream_code_client.dart';
-export 'src/xtream_client.dart';
