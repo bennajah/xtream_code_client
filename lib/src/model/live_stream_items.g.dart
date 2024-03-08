@@ -15,7 +15,7 @@ XTremeCodeLiveStreamItem _$XTremeCodeLiveStreamItemFromJson(
       streamId: json['stream_id'] as int,
       streamIcon: json['stream_icon'] as String?,
       epgChannelId: json['epg_channel_id'] as String?,
-      added: dateTimeFromEpochSeconds(json['added'] as String?),
+      added: dateTimeFromString(json['added'] as String?),
       customSid: json['custom_sid'] as String?,
       tvArchive: json['tv_archive'] as int?,
       directSource: json['direct_source'] as String?,
