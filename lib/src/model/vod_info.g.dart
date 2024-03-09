@@ -88,10 +88,10 @@ XTremeCodeMovieData _$XTremeCodeMovieDataFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       year: json['year'] as String,
       added: dateTimeFromEpochSeconds(json['added'] as String?),
-      categoryId: json['categoryId'] as String,
+      categoryId: json['category_id'] as String,
       categoryIds:
-          (json['categoryIds'] as List<dynamic>).map((e) => e as int).toList(),
-      containerExtension: json['containerExtension'] as String,
+          (json['category_ids'] as List<dynamic>).map((e) => e as int).toList(),
+      containerExtension: json['container_extension'] as String,
       customSid: json['custom_sid'] as String,
       directSource: json['direct_source'] as String,
     );
