@@ -150,7 +150,6 @@ class XtreamCodeClient {
     final response = await _http.get(Uri.parse('$_baseUrl&action=$action'));
     if (response.statusCode == 200) {
       final parsed = json.decode(response.body) as Map<String, dynamic>;
-      print(parsed);
       return XTremeCodeVodInfo.fromJson(parsed);
     } else {
       throw XTreamCodeClientException(
