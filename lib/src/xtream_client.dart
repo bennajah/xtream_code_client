@@ -144,13 +144,13 @@ class XtreamCodeClient {
   }
 
   /// Retrieves information about a specific VOD item.
-  Future<XTremeCodeSeriesInfo> vodInfo(XTremeCodeVodItem series) async {
-    final action = 'get_vod_info&vod_id=${series.streamId}';
+  Future<XTremeCodeVodInfo> vodInfo(XTremeCodeVodItem item) async {
+    final action = 'get_vod_info&vod_id=${item.streamId}';
     final response = await _http.get(Uri.parse('$_baseUrl&action=$action'));
 
     if (response.statusCode == 200) {
       final parsed = json.decode(response.body) as Map<String, dynamic>;
-      return XTremeCodeSeriesInfo.fromJson(parsed);
+      return XTremeCodeVodInfo.fromJson(parsed);
     } else {
       throw XTreamCodeClientException(
         '''
