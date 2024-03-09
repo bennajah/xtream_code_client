@@ -9,6 +9,7 @@ import 'package:xtream_code_client/src/model/general_information.dart';
 import 'package:xtream_code_client/src/model/live_stream_items.dart';
 import 'package:xtream_code_client/src/model/series_info.dart';
 import 'package:xtream_code_client/src/model/series_items.dart';
+import 'package:xtream_code_client/src/model/vod_info.dart';
 import 'package:xtream_code_client/src/model/vod_items.dart';
 
 /// A client for interacting with Xtream Code server.
@@ -128,7 +129,7 @@ class XtreamCodeClient {
   }
 
   /// Retrieves information about a specific VOD item.
-  Future<XTremeCodeSeriesInfo> vodInfo(XTremeCodeVodItem series) async {
+  Future<XTremeCodeVodInfo> vodInfo(XTremeCodeVodItem series) async {
     final action = 'get_vod_info&vod_id=${series.streamId}';
     final response = await _http.get(Uri.parse('$_baseUrl&action=$action'));
 
