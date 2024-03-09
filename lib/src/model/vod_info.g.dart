@@ -10,13 +10,13 @@ XTremeCodeVodInfo _$XTremeCodeVodInfoFromJson(Map<String, dynamic> json) =>
     XTremeCodeVodInfo(
       info: XTremeCodeInfoVod.fromJson(json['info'] as Map<String, dynamic>),
       movieData: XTremeCodeMovieData.fromJson(
-          json['movieData'] as Map<String, dynamic>),
+          json['movie_data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$XTremeCodeVodInfoToJson(XTremeCodeVodInfo instance) =>
     <String, dynamic>{
       'info': instance.info,
-      'movieData': instance.movieData,
+      'movie_data': instance.movieData,
     };
 
 XTremeCodeInfoVod _$XTremeCodeInfoVodFromJson(Map<String, dynamic> json) =>
@@ -48,7 +48,7 @@ XTremeCodeInfoVod _$XTremeCodeInfoVodFromJson(Map<String, dynamic> json) =>
       bitrate: json['bitrate'] as int?,
       rating: json['rating'] as int?,
       releasedate: json['releasedate'] as String?,
-      subtitles: json['subtitles'] as List<dynamic>,
+      subtitles: json['subtitles'] as List<dynamic>?,
     );
 
 Map<String, dynamic> _$XTremeCodeInfoVodToJson(XTremeCodeInfoVod instance) =>
@@ -84,16 +84,16 @@ Map<String, dynamic> _$XTremeCodeInfoVodToJson(XTremeCodeInfoVod instance) =>
 XTremeCodeMovieData _$XTremeCodeMovieDataFromJson(Map<String, dynamic> json) =>
     XTremeCodeMovieData(
       streamId: json['stream_id'] as int,
-      name: json['name'] as String,
-      title: json['title'] as String,
-      year: json['year'] as String,
+      name: json['name'] as String?,
+      title: json['title'] as String?,
+      year: json['year'] as String?,
       added: dateTimeFromString(json['added'] as String?),
-      categoryId: json['category_id'] as String,
+      categoryId: json['category_id'] as String?,
       categoryIds:
           (json['category_ids'] as List<dynamic>).map((e) => e as int).toList(),
-      containerExtension: json['container_extension'] as String,
-      customSid: json['custom_sid'] as String,
-      directSource: json['direct_source'] as String,
+      containerExtension: json['container_extension'] as String?,
+      customSid: json['custom_sid'] as String?,
+      directSource: json['direct_source'] as String?,
     );
 
 Map<String, dynamic> _$XTremeCodeMovieDataToJson(
