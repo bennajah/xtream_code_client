@@ -51,7 +51,7 @@ class XTremeCodeLiveStreamItem {
   final String? epgChannelId;
 
   /// The date when the live stream item was added.
-  @JsonKey(fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(fromJson: dateTimeFromString)
   final DateTime? added;
 
   /// The custom SID of the live stream item.
