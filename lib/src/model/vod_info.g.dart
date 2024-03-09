@@ -46,7 +46,7 @@ XTremeCodeInfoVod _$XTremeCodeInfoVodFromJson(Map<String, dynamic> json) =>
       durationSecs: json['duration_secs'] as int?,
       duration: json['duration'] as String?,
       bitrate: json['bitrate'] as int?,
-      rating: json['rating'] as int?,
+      rating: json['rating'] as double?,
       releasedate: json['releasedate'] as String?,
       subtitles: json['subtitles'] as List<dynamic>?,
     );
