@@ -145,13 +145,13 @@ class XTremeCodeInfoVod {
   final int? bitrate;
 
   /// The rating of the movie.
-  final int? rating;
+  final double? rating;
 
   /// The release date of the movie.
   final String? releasedate;
 
   /// The subtitles of the movie.
-  final List<dynamic> subtitles;
+  final List<dynamic>? subtitles;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeInfoVodToJson(this);
@@ -183,13 +183,13 @@ class XTremeCodeMovieData {
   final int streamId;
 
   /// The name of the movie.
-  final String name;
+  final String? name;
 
   /// The title of the movie.
-  final String title;
+  final String? title;
 
   /// The year the movie was released.
-  final String year;
+  final String? year;
 
   /// The date the movie was added.
   @JsonKey(fromJson: dateTimeFromString)
@@ -197,23 +197,23 @@ class XTremeCodeMovieData {
 
   /// The ID of the category the movie belongs to.
   @JsonKey(name: 'category_id')
-  final String categoryId;
+  final String? categoryId;
 
   /// The IDs of the categories the movie belongs to.
   @JsonKey(name: 'category_ids')
-  final List<int> categoryIds;
+  final List<int>? categoryIds;
 
   /// The container extension of the movie.
   @JsonKey(name: 'container_extension')
-  final String containerExtension;
+  final String? containerExtension;
 
   /// The custom SID of the movie.
   @JsonKey(name: 'custom_sid')
-  final String customSid;
+  final String? customSid;
 
   /// The direct source of the movie.
   @JsonKey(name: 'direct_source')
-  final String directSource;
+  final String? directSource;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeMovieDataToJson(this);
