@@ -148,7 +148,7 @@ class XtreamCodeClient {
   Future<XTremeCodeVodInfo> vodInfo(XTremeCodeVodItem item) async {
     final action = 'get_vod_info&vod_id=${item.streamId}';
     final response = await _http.get(Uri.parse('$_baseUrl&action=$action'));
-
+    print(response.statusCode);
     if (response.statusCode == 200) {
       final parsed = json.decode(response.body) as Map<String, dynamic>;
       return XTremeCodeVodInfo.fromJson(parsed);
