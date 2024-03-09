@@ -192,19 +192,19 @@ class XTremeCodeMovieData {
   final String year;
 
   /// The date the movie was added.
-  @JsonKey(fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(fromJson: dateTimeFromString)
   final DateTime? added;
 
   /// The ID of the category the movie belongs to.
-  @JsonKey(name: 'categoryId')
+  @JsonKey(name: 'category_id')
   final String categoryId;
 
   /// The IDs of the categories the movie belongs to.
-  @JsonKey(name: 'categoryIds')
+  @JsonKey(name: 'category_ids')
   final List<int> categoryIds;
 
   /// The container extension of the movie.
-  @JsonKey(name: 'containerExtension')
+  @JsonKey(name: 'container_extension')
   final String containerExtension;
 
   /// The custom SID of the movie.
