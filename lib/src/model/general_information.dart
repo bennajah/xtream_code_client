@@ -1,3 +1,4 @@
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:xtream_code_client/src/model/server_info.dart';
 import 'package:xtream_code_client/src/model/user_info.dart';
@@ -5,8 +6,9 @@ import 'package:xtream_code_client/src/model/user_info.dart';
 part 'general_information.g.dart';
 
 /// Represents general information about the Xtream Code.
+@HiveType(typeId: 0)
 @JsonSerializable()
-class XTremeCodeGeneralInformation {
+class XTremeCodeGeneralInformation extends HiveObject {
   /// Creates a new instance of [XTremeCodeGeneralInformation].
   XTremeCodeGeneralInformation({
     required this.userInfo,
@@ -19,12 +21,14 @@ class XTremeCodeGeneralInformation {
       _$XTremeCodeGeneralInformationFromJson(json);
 
   /// The user information.
+  @HiveField(0)
   @JsonKey(name: 'user_info')
-  final XTremeCodeUserInfo userInfo;
+  final XTremeCodeUserInfo? userInfo;
 
   /// The server information.
+  @HiveField(1)
   @JsonKey(name: 'server_info')
-  final XTremeCodeServerInfo serverInfo;
+  final XTremeCodeServerInfo? serverInfo;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeGeneralInformationToJson(this);

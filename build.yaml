@@ -1,0 +1,8 @@
+targets:
+  $default:
+    sources:
+      exclude:
+        - example/linux/flutter/ephemeral/**
+        - example/windows/flutter/ephemeral/**
+        - "**/*.g.dart"
+        - "**/*.freezed.dart"

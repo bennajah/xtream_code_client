@@ -1,3 +1,4 @@
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:xtream_code_client/src/utils/json_helper.dart';
 
@@ -5,7 +6,8 @@ part 'series_info.g.dart';
 
 /// Represents the information about a series in Xtream Code.
 @JsonSerializable()
-class XTremeCodeSeriesInfo {
+@HiveType(typeId: 14)
+class XTremeCodeSeriesInfo extends HiveObject {
   /// Creates a new instance of [XTremeCodeSeriesInfo].
   XTremeCodeSeriesInfo({
     required this.seasons,
@@ -18,13 +20,19 @@ class XTremeCodeSeriesInfo {
       _$XTremeCodeSeriesInfoFromJson(json);
 
   /// The seasons of the series.
-  final List<XTremeCodeSeason> seasons;
+  @JsonKey(name: 'seasons')
+  @HiveField(0)
+  final List<XTremeCodeSeason>? seasons;
 
   /// The information about the series.
-  final XTremeCodeInfo info;
+  @JsonKey(name: 'info')
+  @HiveField(1)
+  final XTremeCodeInfo? info;
 
   /// The episodes of the series, grouped by season.
-  final Map<String, List<XTremeCodeEpisode>> episodes;
+  @JsonKey(name: 'episodes')
+  @HiveField(2)
+  final Map<String, List<XTremeCodeEpisode>>? episodes;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeSeriesInfoToJson(this);
@@ -32,7 +40,8 @@ class XTremeCodeSeriesInfo {
 
 /// Represents a season in Xtream Code.
 @JsonSerializable()
-class XTremeCodeSeason {
+@HiveType(typeId: 15)
+class XTremeCodeSeason extends HiveObject {
   /// Creates a new instance of [XTremeCodeSeason].
   XTremeCodeSeason({
     required this.airDate,
@@ -52,35 +61,48 @@ class XTremeCodeSeason {
 
   /// The air date of the season.
   @JsonKey(name: 'air_date')
-  final String airDate;
+  @HiveField(0)
+  final String? airDate;
 
   /// The count of episodes in the season.
   @JsonKey(name: 'episode_count')
-  final int episodeCount;
+  @HiveField(1)
+  final int? episodeCount;
 
   /// The ID of the season.
-  final int id;
+  @JsonKey(name: 'id')
+  @HiveField(2)
+  final int? id;
 
   /// The name of the season.
-  final String name;
+  @JsonKey(name: 'name')
+  @HiveField(3)
+  final String? name;
 
   /// The overview of the season.
-  final String overview;
+  @JsonKey(name: 'overview')
+  @HiveField(4)
+  final String? overview;
 
   /// The number of the season.
   @JsonKey(name: 'season_number')
-  final int seasonNumber;
+  @HiveField(5)
+  final int? seasonNumber;
 
   /// The average vote of the season.
   @JsonKey(name: 'vote_average')
-  final int voteAverage;
+  @HiveField(6)
+  final int? voteAverage;
 
   /// The cover image of the season.
-  final String cover;
+  @JsonKey(name: 'cover')
+  @HiveField(7)
+  final String? cover;
 
   /// The big cover image of the season.
   @JsonKey(name: 'cover_big')
-  final String coverBig;
+  @HiveField(8)
+  final String? coverBig;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeSeasonToJson(this);
@@ -88,7 +110,8 @@ class XTremeCodeSeason {
 
 /// Represents the information about a series in Xtream Code.
 @JsonSerializable()
-class XTremeCodeInfo {
+@HiveType(typeId: 16)
+class XTremeCodeInfo extends HiveObject {
   /// Creates a new instance of [XTremeCodeInfo].
   XTremeCodeInfo({
     required this.name,
@@ -115,62 +138,89 @@ class XTremeCodeInfo {
       _$XTremeCodeInfoFromJson(json);
 
   /// The name of the series.
-  final String name;
+  @JsonKey(name: 'name')
+  @HiveField(0)
+  final String? name;
 
   /// The title of the series.
-  final String title;
+  @JsonKey(name: 'title')
+  @HiveField(1)
+  final String? title;
 
   /// The year of the series.
-  final String year;
+  @JsonKey(name: 'year')
+  @HiveField(2)
+  final String? year;
 
   /// The cover image of the series.
-  final String cover;
+  @JsonKey(name: 'cover')
+  @HiveField(3)
+  final String? cover;
 
   /// The plot of the series.
-  final String plot;
+  @JsonKey(name: 'plot')
+  @HiveField(4)
+  final String? plot;
 
   /// The cast of the series.
-  final String cast;
+  @JsonKey(name: 'cast')
+  @HiveField(5)
+  final String? cast;
 
   /// The director of the series.
-  final String director;
+  @JsonKey(name: 'director')
+  @HiveField(6)
+  final String? director;
 
   /// The genre of the series.
-  final String genre;
+  @JsonKey(name: 'genre')
+  @HiveField(7)
+  final String? genre;
 
   /// The release date of the series.
+  @JsonKey(name: 'release_date')
+  @HiveField(8)
   final String? releaseDate;
 
   /// The last modified date of the series.
   @JsonKey(name: 'last_modified', fromJson: dateTimeFromEpochSeconds)
+  @HiveField(9)
   final DateTime? lastModified;
 
   /// The rating of the series.
-  final String rating;
+  @JsonKey(name: 'rating')
+  @HiveField(10)
+  final String? rating;
 
   /// The rating of the series based on a 5-point scale.
   @JsonKey(name: 'rating_5based')
-  final double rating5based;
+  @HiveField(11)
+  final double? rating5based;
 
   /// The backdrop path of the series.
   @JsonKey(name: 'backdrop_path')
-  final List<String> backdropPath;
+  @HiveField(12)
+  final List<String>? backdropPath;
 
   /// The YouTube trailer of the series.
   @JsonKey(name: 'youtube_trailer')
-  final String youtubeTrailer;
+  @HiveField(13)
+  final String? youtubeTrailer;
 
   /// The runtime of each episode in the series.
   @JsonKey(name: 'episode_run_time')
-  final String episodeRunTime;
+  @HiveField(14)
+  final String? episodeRunTime;
 
   /// The ID of the category of the series.
   @JsonKey(name: 'category_id')
-  final String categoryId;
+  @HiveField(15)
+  final String? categoryId;
 
   /// The IDs of the categories of the series.
-  @JsonKey(name: 'categoryIds')
-  final List<int> categoryIds;
+  @JsonKey(name: 'category_ids')
+  @HiveField(16)
+  final List<int>? categoryIds;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeInfoToJson(this);
@@ -178,7 +228,8 @@ class XTremeCodeInfo {
 
 /// Represents an episode in Xtream Code.
 @JsonSerializable()
-class XTremeCodeEpisode {
+@HiveType(typeId: 17)
+class XTremeCodeEpisode extends HiveObject {
   /// Creates a new instance of [XTremeCodeEpisode].
   XTremeCodeEpisode({
     required this.id,
@@ -198,39 +249,54 @@ class XTremeCodeEpisode {
       _$XTremeCodeEpisodeFromJson(json);
 
   /// The ID of the episode.
-  final String id;
+  @JsonKey(name: 'id')
+  @HiveField(0)
+  final String? id;
 
   /// The number of the episode.
   @JsonKey(name: 'episode_num')
-  final String episodeNum;
+  @HiveField(1)
+  final String? episodeNum;
 
   /// The title of the episode.
-  final String title;
+  @JsonKey(name: 'title')
+  @HiveField(2)
+  final String? title;
 
   /// The container extension of the episode.
   @JsonKey(name: 'container_extension')
-  final String containerExtension;
+  @HiveField(3)
+  final String? containerExtension;
 
   /// The information about the episode.
-  final XTremeCodeEpisodeInfo info;
+  @JsonKey(name: 'info')
+  @HiveField(4)
+  final XTremeCodeEpisodeInfo? info;
 
   /// The subtitles of the episode.
-  final List<String> subtitles;
+  @JsonKey(name: 'subtitles')
+  @HiveField(5)
+  final List<String>? subtitles;
 
   /// The custom SID of the episode.
   @JsonKey(name: 'custom_sid')
-  final String customSid;
+  @HiveField(6)
+  final String? customSid;
 
   /// The date when the episode was added.
-  @JsonKey(fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'added', fromJson: dateTimeFromEpochSeconds)
+  @HiveField(7)
   final DateTime? added;
 
   /// The season of the episode.
-  final int season;
+  @JsonKey(name: 'season')
+  @HiveField(8)
+  final int? season;
 
   /// The direct source of the episode.
   @JsonKey(name: 'direct_source')
-  final String directSource;
+  @HiveField(9)
+  final String? directSource;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeEpisodeToJson(this);
@@ -238,7 +304,8 @@ class XTremeCodeEpisode {
 
 /// Represents the information about an episode in Xtream Code.
 @JsonSerializable()
-class XTremeCodeEpisodeInfo {
+@HiveType(typeId: 18)
+class XTremeCodeEpisodeInfo extends HiveObject {
   /// Creates a new instance of [XTremeCodeEpisodeInfo].
   XTremeCodeEpisodeInfo({
     required this.tmdbId,
@@ -259,36 +326,52 @@ class XTremeCodeEpisodeInfo {
 
   /// The ID of the episode in The Movie Database (TMDb).
   @JsonKey(name: 'tmdb_id')
+  @HiveField(0)
   final int? tmdbId;
 
   /// The release date of the episode.
+  @JsonKey(name: 'release_date')
+  @HiveField(1)
   final String? releaseDate;
 
   /// The plot of the episode.
+  @JsonKey(name: 'plot')
+  @HiveField(2)
   final String? plot;
 
   /// The duration of the episode in seconds.
   @JsonKey(name: 'duration_secs')
+  @HiveField(3)
   final int? durationSecs;
 
   /// The duration of the episode.
+  @JsonKey(name: 'duration')
+  @HiveField(4)
   final String? duration;
 
   /// The image of the episode.
   @JsonKey(name: 'movie_image')
+  @HiveField(5)
   final String? movieImage;
 
   /// The bitrate of the episode.
+  @JsonKey(name: 'bitrate')
+  @HiveField(6)
   final int? bitrate;
 
   /// The rating of the episode.
+  @JsonKey(name: 'rating')
+  @HiveField(7)
   final double? rating;
 
   /// The season of the episode.
+  @JsonKey(name: 'season')
+  @HiveField(8)
   final int? season;
 
   /// The big cover image of the episode.
   @JsonKey(name: 'cover_big')
+  @HiveField(9)
   final String? coverBig;
 
   /// Converts this instance into a JSON object.

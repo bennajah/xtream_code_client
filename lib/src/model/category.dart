@@ -1,10 +1,12 @@
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'category.g.dart';
 
 /// Represents a category in XTremeCode.
 @JsonSerializable()
-class XTremeCodeCategory {
+@HiveType(typeId: 3)
+class XTremeCodeCategory extends HiveObject {
   /// Creates a new instance of [XTremeCodeCategory].
   XTremeCodeCategory({
     required this.categoryId,
@@ -18,14 +20,17 @@ class XTremeCodeCategory {
 
   /// The ID of the category.
   @JsonKey(name: 'category_id')
-  String categoryId;
+  @HiveField(0)
+  String? categoryId;
 
   /// The name of the category.
   @JsonKey(name: 'category_name')
+  @HiveField(1)
   String? categoryName;
 
   /// The ID of the parent category.
   @JsonKey(name: 'parent_id')
+  @HiveField(2)
   int? parentId;
 
   /// Converts this [XTremeCodeCategory] instance to a JSON map.
