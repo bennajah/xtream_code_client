@@ -49,64 +49,64 @@ class XTremeCodeEpgListingTable extends HiveObject {
       _$XTremeCodeEpgListingTableFromJson(json);
 
   /// The ID of the EPG listing.
-  @JsonKey(name: 'id')
+  @JsonKey(name: 'id', fromJson: jsonString)
   @HiveField(0)
   final String? id;
 
   /// The ID of the EPG.
-  @JsonKey(name: 'epg_id')
+  @JsonKey(name: 'epg_id', fromJson: jsonString)
   @HiveField(1)
   final String? epgId;
 
   /// The title of the EPG listing.
-  @JsonKey(name: 'title')
+  @JsonKey(name: 'title', fromJson: jsonString)
   @HiveField(2)
   final String? title;
 
   /// The language of the EPG listing.
-  @JsonKey(name: 'lang')
+  @JsonKey(name: 'lang', fromJson: jsonString)
   @HiveField(3)
   final String? lang;
 
   /// The start time of the EPG listing.
-  @JsonKey(name: 'start', fromJson: dateTimeFromString)
+  @JsonKey(name: 'start', fromJson: jsonString)
   @HiveField(4)
-  final DateTime? start;
+  final String? start;
 
   /// The end time of the EPG listing.
-  @JsonKey(name: 'end', fromJson: dateTimeFromString)
+  @JsonKey(name: 'end', fromJson: jsonString)
   @HiveField(5)
-  final DateTime? end;
+  final String? end;
 
   /// The description of the EPG listing.
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'description', fromJson: jsonString)
   @HiveField(6)
   final String? description;
 
   /// The ID of the channel.
-  @JsonKey(name: 'channel_id')
+  @JsonKey(name: 'channel_id', fromJson: jsonString)
   @HiveField(7)
   final String? channelId;
 
   /// The start timestamp of the EPG listing.
-  @JsonKey(name: 'start_timestamp', fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'start_timestamp', fromJson: jsonString)
   @HiveField(8)
-  final DateTime? startTimestamp;
+  final String? startTimestamp;
 
   /// The stop timestamp of the EPG listing.
-  @JsonKey(name: 'stop_timestamp', fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'stop_timestamp', fromJson: jsonString)
   @HiveField(9)
-  final DateTime? stopTimestamp;
+  final String? stopTimestamp;
 
   /// Whether the EPG listing is currently playing.
-  @JsonKey(name: 'now_playing', fromJson: intToBool)
+  @JsonKey(name: 'now_playing', fromJson: jsonString)
   @HiveField(10)
-  final bool? nowPlaying;
+  final String? nowPlaying;
 
   /// Whether the EPG listing has an archive.
-  @JsonKey(name: 'has_archive', fromJson: intToBool)
+  @JsonKey(name: 'has_archive', fromJson: jsonString)
   @HiveField(11)
-  final bool? hasArchive;
+  final String? hasArchive;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeEpgListingTableToJson(this);

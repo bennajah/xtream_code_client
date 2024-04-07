@@ -28,57 +28,57 @@ class XTremeCodeUserInfo extends HiveObject {
       _$XTremeCodeUserInfoFromJson(json);
 
   /// The username of the user.
-  @JsonKey(name: 'username')
+  @JsonKey(name: 'username', fromJson: jsonString)
   @HiveField(0)
   final String? username;
 
   /// The password of the user.
-  @JsonKey(name: 'password')
+  @JsonKey(name: 'password', fromJson: jsonString)
   @HiveField(1)
   final String? password;
 
   /// The message for the user.
-  @JsonKey(name: 'message')
+  @JsonKey(name: 'message', fromJson: jsonString)
   @HiveField(2)
   final String? message;
 
   /// The authentication status of the user.
-  @JsonKey(name: 'auth')
+  @JsonKey(name: 'auth', fromJson: jsonString)
   @HiveField(3)
-  final int? auth;
+  final String? auth;
 
   /// The status of the user.
-  @JsonKey(name: 'status')
+  @JsonKey(name: 'status', fromJson: jsonString)
   @HiveField(4)
   final String? status;
 
   /// The expiration date of the user's subscription.
-  @JsonKey(name: 'exp_date', fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'exp_date', fromJson: jsonString)
   @HiveField(5)
-  final DateTime? expDate;
+  final String? expDate;
 
   /// Whether the user is on a trial subscription.
-  @JsonKey(name: 'is_trial')
+  @JsonKey(name: 'is_trial', fromJson: jsonString)
   @HiveField(6)
   final String? isTrial;
 
   /// The number of active connections of the user.
-  @JsonKey(name: 'active_cons')
+  @JsonKey(name: 'active_cons', fromJson: jsonString)
   @HiveField(7)
   final String? activeCons;
 
   /// The date when the user was created.
-  @JsonKey(name: 'created_at', fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'created_at', fromJson: jsonString)
   @HiveField(8)
-  final DateTime? createdAt;
+  final String? createdAt;
 
   /// The maximum number of connections allowed for the user.
-  @JsonKey(name: 'max_connections')
+  @JsonKey(name: 'max_connections', fromJson: jsonString)
   @HiveField(9)
   final String? maxConnections;
 
   /// The output formats allowed for the user.
-  @JsonKey(name: 'allowed_output_formats')
+  @JsonKey(name: 'allowed_output_formats', fromJson: jsonStringList)
   @HiveField(10)
   final List<String>? allowedOutputFormats;
 

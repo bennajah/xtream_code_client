@@ -60,47 +60,47 @@ class XTremeCodeSeason extends HiveObject {
       _$XTremeCodeSeasonFromJson(json);
 
   /// The air date of the season.
-  @JsonKey(name: 'air_date')
+  @JsonKey(name: 'air_date', fromJson: jsonString)
   @HiveField(0)
   final String? airDate;
 
   /// The count of episodes in the season.
-  @JsonKey(name: 'episode_count')
+  @JsonKey(name: 'episode_count', fromJson: jsonString)
   @HiveField(1)
-  final int? episodeCount;
+  final String? episodeCount;
 
   /// The ID of the season.
-  @JsonKey(name: 'id')
+  @JsonKey(name: 'id', fromJson: jsonString)
   @HiveField(2)
-  final int? id;
+  final String? id;
 
   /// The name of the season.
-  @JsonKey(name: 'name')
+  @JsonKey(name: 'name', fromJson: jsonString)
   @HiveField(3)
   final String? name;
 
   /// The overview of the season.
-  @JsonKey(name: 'overview')
+  @JsonKey(name: 'overview', fromJson: jsonString)
   @HiveField(4)
   final String? overview;
 
   /// The number of the season.
-  @JsonKey(name: 'season_number')
+  @JsonKey(name: 'season_number', fromJson: jsonString)
   @HiveField(5)
-  final int? seasonNumber;
+  final String? seasonNumber;
 
   /// The average vote of the season.
-  @JsonKey(name: 'vote_average')
+  @JsonKey(name: 'vote_average', fromJson: jsonString)
   @HiveField(6)
-  final int? voteAverage;
+  final String? voteAverage;
 
   /// The cover image of the season.
-  @JsonKey(name: 'cover')
+  @JsonKey(name: 'cover', fromJson: jsonString)
   @HiveField(7)
   final String? cover;
 
   /// The big cover image of the season.
-  @JsonKey(name: 'cover_big')
+  @JsonKey(name: 'cover_big', fromJson: jsonString)
   @HiveField(8)
   final String? coverBig;
 
@@ -138,89 +138,89 @@ class XTremeCodeInfo extends HiveObject {
       _$XTremeCodeInfoFromJson(json);
 
   /// The name of the series.
-  @JsonKey(name: 'name')
+  @JsonKey(name: 'name', fromJson: jsonString)
   @HiveField(0)
   final String? name;
 
   /// The title of the series.
-  @JsonKey(name: 'title')
+  @JsonKey(name: 'title', fromJson: jsonString)
   @HiveField(1)
   final String? title;
 
   /// The year of the series.
-  @JsonKey(name: 'year')
+  @JsonKey(name: 'year', fromJson: jsonString)
   @HiveField(2)
   final String? year;
 
   /// The cover image of the series.
-  @JsonKey(name: 'cover')
+  @JsonKey(name: 'cover', fromJson: jsonString)
   @HiveField(3)
   final String? cover;
 
   /// The plot of the series.
-  @JsonKey(name: 'plot')
+  @JsonKey(name: 'plot', fromJson: jsonString)
   @HiveField(4)
   final String? plot;
 
   /// The cast of the series.
-  @JsonKey(name: 'cast')
+  @JsonKey(name: 'cast', fromJson: jsonString)
   @HiveField(5)
   final String? cast;
 
   /// The director of the series.
-  @JsonKey(name: 'director')
+  @JsonKey(name: 'director', fromJson: jsonString)
   @HiveField(6)
   final String? director;
 
   /// The genre of the series.
-  @JsonKey(name: 'genre')
+  @JsonKey(name: 'genre', fromJson: jsonString)
   @HiveField(7)
   final String? genre;
 
   /// The release date of the series.
-  @JsonKey(name: 'release_date')
+  @JsonKey(name: 'release_date', fromJson: jsonString)
   @HiveField(8)
   final String? releaseDate;
 
   /// The last modified date of the series.
-  @JsonKey(name: 'last_modified', fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'last_modified', fromJson: jsonString)
   @HiveField(9)
-  final DateTime? lastModified;
+  final String? lastModified;
 
   /// The rating of the series.
-  @JsonKey(name: 'rating')
+  @JsonKey(name: 'rating', fromJson: jsonString)
   @HiveField(10)
   final String? rating;
 
   /// The rating of the series based on a 5-point scale.
-  @JsonKey(name: 'rating_5based')
+  @JsonKey(name: 'rating_5based', fromJson: jsonString)
   @HiveField(11)
-  final double? rating5based;
+  final String? rating5based;
 
   /// The backdrop path of the series.
-  @JsonKey(name: 'backdrop_path')
+  @JsonKey(name: 'backdrop_path', fromJson: jsonStringList)
   @HiveField(12)
   final List<String>? backdropPath;
 
   /// The YouTube trailer of the series.
-  @JsonKey(name: 'youtube_trailer')
+  @JsonKey(name: 'youtube_trailer', fromJson: jsonString)
   @HiveField(13)
   final String? youtubeTrailer;
 
   /// The runtime of each episode in the series.
-  @JsonKey(name: 'episode_run_time')
+  @JsonKey(name: 'episode_run_time', fromJson: jsonString)
   @HiveField(14)
   final String? episodeRunTime;
 
   /// The ID of the category of the series.
-  @JsonKey(name: 'category_id')
+  @JsonKey(name: 'category_id', fromJson: jsonString)
   @HiveField(15)
   final String? categoryId;
 
   /// The IDs of the categories of the series.
-  @JsonKey(name: 'category_ids')
+  @JsonKey(name: 'category_ids', fromJson: jsonStringList)
   @HiveField(16)
-  final List<int>? categoryIds;
+  final List<String>? categoryIds;
 
   /// Converts this instance into a JSON object.
   Map<String, dynamic> toJson() => _$XTremeCodeInfoToJson(this);
@@ -249,22 +249,22 @@ class XTremeCodeEpisode extends HiveObject {
       _$XTremeCodeEpisodeFromJson(json);
 
   /// The ID of the episode.
-  @JsonKey(name: 'id')
+  @JsonKey(name: 'id', fromJson: jsonString)
   @HiveField(0)
   final String? id;
 
   /// The number of the episode.
-  @JsonKey(name: 'episode_num')
+  @JsonKey(name: 'episode_num', fromJson: jsonString)
   @HiveField(1)
   final String? episodeNum;
 
   /// The title of the episode.
-  @JsonKey(name: 'title')
+  @JsonKey(name: 'title', fromJson: jsonString)
   @HiveField(2)
   final String? title;
 
   /// The container extension of the episode.
-  @JsonKey(name: 'container_extension')
+  @JsonKey(name: 'container_extension', fromJson: jsonString)
   @HiveField(3)
   final String? containerExtension;
 
@@ -276,25 +276,25 @@ class XTremeCodeEpisode extends HiveObject {
   /// The subtitles of the episode.
   @JsonKey(name: 'subtitles')
   @HiveField(5)
-  final List<String>? subtitles;
+  final List<dynamic>? subtitles;
 
   /// The custom SID of the episode.
-  @JsonKey(name: 'custom_sid')
+  @JsonKey(name: 'custom_sid', fromJson: jsonString)
   @HiveField(6)
   final String? customSid;
 
   /// The date when the episode was added.
-  @JsonKey(name: 'added', fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'added', fromJson: jsonString)
   @HiveField(7)
-  final DateTime? added;
+  final String? added;
 
   /// The season of the episode.
-  @JsonKey(name: 'season')
+  @JsonKey(name: 'season', fromJson: jsonString)
   @HiveField(8)
-  final int? season;
+  final String? season;
 
   /// The direct source of the episode.
-  @JsonKey(name: 'direct_source')
+  @JsonKey(name: 'direct_source', fromJson: jsonString)
   @HiveField(9)
   final String? directSource;
 
@@ -325,52 +325,52 @@ class XTremeCodeEpisodeInfo extends HiveObject {
       _$XTremeCodeEpisodeInfoFromJson(json);
 
   /// The ID of the episode in The Movie Database (TMDb).
-  @JsonKey(name: 'tmdb_id')
+  @JsonKey(name: 'tmdb_id', fromJson: jsonString)
   @HiveField(0)
-  final int? tmdbId;
+  final String? tmdbId;
 
   /// The release date of the episode.
-  @JsonKey(name: 'release_date')
+  @JsonKey(name: 'release_date', fromJson: jsonString)
   @HiveField(1)
   final String? releaseDate;
 
   /// The plot of the episode.
-  @JsonKey(name: 'plot')
+  @JsonKey(name: 'plot', fromJson: jsonString)
   @HiveField(2)
   final String? plot;
 
   /// The duration of the episode in seconds.
-  @JsonKey(name: 'duration_secs')
+  @JsonKey(name: 'duration_secs', fromJson: jsonString)
   @HiveField(3)
-  final int? durationSecs;
+  final String? durationSecs;
 
   /// The duration of the episode.
-  @JsonKey(name: 'duration')
+  @JsonKey(name: 'duration', fromJson: jsonString)
   @HiveField(4)
   final String? duration;
 
   /// The image of the episode.
-  @JsonKey(name: 'movie_image')
+  @JsonKey(name: 'movie_image', fromJson: jsonString)
   @HiveField(5)
   final String? movieImage;
 
   /// The bitrate of the episode.
-  @JsonKey(name: 'bitrate')
+  @JsonKey(name: 'bitrate', fromJson: jsonString)
   @HiveField(6)
-  final int? bitrate;
+  final String? bitrate;
 
   /// The rating of the episode.
-  @JsonKey(name: 'rating')
+  @JsonKey(name: 'rating', fromJson: jsonString)
   @HiveField(7)
-  final double? rating;
+  final String? rating;
 
   /// The season of the episode.
-  @JsonKey(name: 'season')
+  @JsonKey(name: 'season', fromJson: jsonString)
   @HiveField(8)
-  final int? season;
+  final String? season;
 
   /// The big cover image of the episode.
-  @JsonKey(name: 'cover_big')
+  @JsonKey(name: 'cover_big', fromJson: jsonString)
   @HiveField(9)
   final String? coverBig;
 

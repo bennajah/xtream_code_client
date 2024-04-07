@@ -55,13 +55,13 @@ class XTremeCodeEpgListingAdapter extends TypeAdapter<XTremeCodeEpgListing> {
       epgId: fields[1] as String?,
       title: fields[2] as String?,
       lang: fields[3] as String?,
-      start: fields[4] as DateTime?,
-      end: fields[5] as DateTime?,
+      start: fields[4] as String?,
+      end: fields[5] as String?,
       description: fields[6] as String?,
       channelId: fields[7] as String?,
-      startTimestamp: fields[8] as DateTime?,
-      stopTimestamp: fields[9] as DateTime?,
-      stop: fields[10] as DateTime?,
+      startTimestamp: fields[8] as String?,
+      stopTimestamp: fields[9] as String?,
+      stop: fields[10] as String?,
     );
   }
 
@@ -125,20 +125,17 @@ Map<String, dynamic> _$XTremeCodeChannelEpgToJson(
 XTremeCodeEpgListing _$XTremeCodeEpgListingFromJson(
         Map<String, dynamic> json) =>
     XTremeCodeEpgListing(
-      id: json['id'] as String?,
-      epgId: json['epg_id'] as String?,
-      title: json['title'] as String?,
-      lang: json['lang'] as String?,
-      start: dateTimeFromString(json['start'] as String?),
-      end: dateTimeFromEpochSeconds(json['end'] as String?),
-      description: json['description'] as String?,
-      channelId: json['channel_id'] as String?,
-      startTimestamp:
-          dateTimeFromEpochSeconds(json['start_timestamp'] as String?),
-      stopTimestamp:
-          dateTimeFromEpochSeconds(json['stop_timestamp'] as String?),
-      stop:
-          json['stop'] == null ? null : DateTime.parse(json['stop'] as String),
+      id: jsonString(json['id']),
+      epgId: jsonString(json['epg_id']),
+      title: jsonString(json['title']),
+      lang: jsonString(json['lang']),
+      start: jsonString(json['start']),
+      end: jsonString(json['end']),
+      description: jsonString(json['description']),
+      channelId: jsonString(json['channel_id']),
+      startTimestamp: jsonString(json['start_timestamp']),
+      stopTimestamp: jsonString(json['stop_timestamp']),
+      stop: jsonString(json['stop']),
     );
 
 Map<String, dynamic> _$XTremeCodeEpgListingToJson(
@@ -148,11 +145,11 @@ Map<String, dynamic> _$XTremeCodeEpgListingToJson(
       'epg_id': instance.epgId,
       'title': instance.title,
       'lang': instance.lang,
-      'start': instance.start?.toIso8601String(),
-      'end': instance.end?.toIso8601String(),
+      'start': instance.start,
+      'end': instance.end,
       'description': instance.description,
       'channel_id': instance.channelId,
-      'start_timestamp': instance.startTimestamp?.toIso8601String(),
-      'stop_timestamp': instance.stopTimestamp?.toIso8601String(),
-      'stop': instance.stop?.toIso8601String(),
+      'start_timestamp': instance.startTimestamp,
+      'stop_timestamp': instance.stopTimestamp,
+      'stop': instance.stop,
     };

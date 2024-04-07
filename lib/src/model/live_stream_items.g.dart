@@ -18,19 +18,19 @@ class XTremeCodeLiveStreamItemAdapter
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return XTremeCodeLiveStreamItem(
-      num: fields[0] as int?,
+      num: fields[0] as String?,
       name: fields[1] as String?,
       streamType: fields[2] as String?,
-      streamId: fields[3] as int,
+      streamId: fields[3] as String?,
       streamIcon: fields[4] as String?,
       epgChannelId: fields[5] as String?,
-      added: fields[6] as DateTime?,
+      added: fields[6] as String?,
       customSid: fields[7] as String?,
-      tvArchive: fields[8] as int?,
+      tvArchive: fields[8] as String?,
       directSource: fields[9] as String?,
-      tvArchiveDuration: fields[10] as int?,
+      tvArchiveDuration: fields[10] as String?,
       categoryId: fields[11] as String?,
-      categoryIds: (fields[12] as List?)?.cast<int>(),
+      categoryIds: (fields[12] as List?)?.cast<String>(),
       thumbnail: fields[13] as String?,
     );
   }
@@ -87,22 +87,20 @@ class XTremeCodeLiveStreamItemAdapter
 XTremeCodeLiveStreamItem _$XTremeCodeLiveStreamItemFromJson(
         Map<String, dynamic> json) =>
     XTremeCodeLiveStreamItem(
-      num: json['num'] as int?,
-      name: json['name'] as String?,
-      streamType: json['stream_type'] as String?,
-      streamId: json['stream_id'] as int,
-      streamIcon: json['stream_icon'] as String?,
-      epgChannelId: json['epg_channel_id'] as String?,
-      added: dateTimeFromString(json['added'] as String?),
-      customSid: json['custom_sid'] as String?,
-      tvArchive: json['tv_archive'] as int?,
-      directSource: json['direct_source'] as String?,
-      tvArchiveDuration: json['tv_archive_duration'] as int?,
-      categoryId: json['category_id'] as String?,
-      categoryIds: (json['category_ids'] as List<dynamic>?)
-          ?.map((e) => e as int)
-          .toList(),
-      thumbnail: json['thumbnail'] as String?,
+      num: jsonString(json['num']),
+      name: jsonString(json['name']),
+      streamType: jsonString(json['stream_type']),
+      streamId: jsonString(json['stream_id']),
+      streamIcon: jsonString(json['stream_icon']),
+      epgChannelId: jsonString(json['epg_channel_id']),
+      added: jsonString(json['added']),
+      customSid: jsonString(json['custom_sid']),
+      tvArchive: jsonString(json['tv_archive']),
+      directSource: jsonString(json['direct_source']),
+      tvArchiveDuration: jsonString(json['tv_archive_duration']),
+      categoryId: jsonString(json['category_id']),
+      categoryIds: jsonStringList(json['category_ids'] as List?),
+      thumbnail: jsonString(json['thumbnail']),
     );
 
 Map<String, dynamic> _$XTremeCodeLiveStreamItemToJson(
@@ -114,7 +112,7 @@ Map<String, dynamic> _$XTremeCodeLiveStreamItemToJson(
       'stream_id': instance.streamId,
       'stream_icon': instance.streamIcon,
       'epg_channel_id': instance.epgChannelId,
-      'added': instance.added?.toIso8601String(),
+      'added': instance.added,
       'custom_sid': instance.customSid,
       'tv_archive': instance.tvArchive,
       'direct_source': instance.directSource,

@@ -57,7 +57,6 @@ class XtreamCode {
   ///
   static Future<XtreamCode> initialize({
     required String url,
-    required String port,
     required String username,
     required String password,
     Client? httpClient,
@@ -71,7 +70,6 @@ class XtreamCode {
     _instance
       .._init(
         url,
-        port,
         username,
         password,
         httpClient,
@@ -102,17 +100,16 @@ class XtreamCode {
 
   void _init(
     String url,
-    String port,
     String username,
     String password,
     Client? httpClient,
   ) {
     _httpClient = httpClient ?? http_factory.httpClient();
     client = XtreamCodeClient(
-      _createBaseUrl(url, port, username, password),
-      _createStreamUrl(url, port, username, password),
-      _createMovieUrl(url, port, username, password),
-      _createSeriesUrl(url, port, username, password),
+      _createBaseUrl(url, username, password),
+      _createStreamUrl(url, username, password),
+      _createMovieUrl(url, username, password),
+      _createSeriesUrl(url, username, password),
       _httpClient,
     );
     _initialized = true;
@@ -129,12 +126,10 @@ class XtreamCode {
 
   String _createBaseUrl(
     String url,
-    String port,
     String username,
     String password,
   ) {
-    final uri =
-        '$url:$port/player_api.php?username=$username&password=$password';
+    final uri = '$url/player_api.php?username=$username&password=$password';
     assert(
       Uri.parse(uri).isAbsolute,
       '''
@@ -147,11 +142,10 @@ class XtreamCode {
 
   String _createStreamUrl(
     String url,
-    String port,
     String username,
     String password,
   ) {
-    final uri = '$url:$port/$username/$password';
+    final uri = '$url/$username/$password';
     assert(
       Uri.parse(uri).isAbsolute,
       '''
@@ -164,11 +158,10 @@ class XtreamCode {
 
   String _createMovieUrl(
     String url,
-    String port,
     String username,
     String password,
   ) {
-    final uri = '$url:$port/movie/$username/$password';
+    final uri = '$url/movie/$username/$password';
     assert(
       Uri.parse(uri).isAbsolute,
       '''
@@ -181,11 +174,10 @@ class XtreamCode {
 
   String _createSeriesUrl(
     String url,
-    String port,
     String username,
     String password,
   ) {
-    final uri = '$url:$port/series/$username/$password';
+    final uri = '$url/series/$username/$password';
     assert(
       Uri.parse(uri).isAbsolute,
       '''

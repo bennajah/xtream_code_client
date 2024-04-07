@@ -32,77 +32,77 @@ class XTremeCodeVodItem extends HiveObject {
       _$XTremeCodeVodItemFromJson(json);
 
   /// The number of the VOD item.
-  @JsonKey(name: 'num')
+  @JsonKey(name: 'num', fromJson: jsonString)
   @HiveField(0)
-  final int? num;
+  final String? num;
 
   /// The name of the VOD item.
-  @JsonKey(name: 'name')
+  @JsonKey(name: 'name', fromJson: jsonString)
   @HiveField(1)
   final String? name;
 
   /// The title of the VOD item.
-  @JsonKey(name: 'title')
+  @JsonKey(name: 'title', fromJson: jsonString)
   @HiveField(2)
   final String? title;
 
   /// The year the VOD item was released.
-  @JsonKey(name: 'year')
+  @JsonKey(name: 'year', fromJson: jsonString)
   @HiveField(3)
   final String? year;
 
   /// The type of the stream of the VOD item.
-  @JsonKey(name: 'stream_type')
+  @JsonKey(name: 'stream_type', fromJson: jsonString)
   @HiveField(4)
   final String? streamType;
 
   /// The ID of the stream of the VOD item.
-  @JsonKey(name: 'stream_id')
+  @JsonKey(name: 'stream_id', fromJson: jsonString)
   @HiveField(5)
-  final int streamId;
+  final String? streamId;
 
   /// The icon of the stream of the VOD item.
-  @JsonKey(name: 'stream_icon')
+  @JsonKey(name: 'stream_icon', fromJson: jsonString)
   @HiveField(6)
   final String? streamIcon;
 
   /// The rating of the VOD item.
-  @JsonKey(name: 'rating')
+  @JsonKey(name: 'rating', fromJson: jsonString)
   @HiveField(7)
-  final double? rating;
+  final String? rating;
 
   /// The rating of the VOD item based on a scale of 5.
-  @JsonKey(name: 'rating_5based')
+  @JsonKey(name: 'rating_5based', fromJson: jsonString)
   @HiveField(8)
-  final double? rating5based;
+  final String? rating5based;
 
   /// The date the VOD item was added.
-  @JsonKey(name: 'added', fromJson: dateTimeFromEpochSeconds)
+  @JsonKey(name: 'added', fromJson: jsonString)
   @HiveField(9)
-  final DateTime? added;
+  final String? added;
 
   /// The ID of the category the VOD item belongs to.
-  @JsonKey(name: 'category_id')
+  @JsonKey(name: 'category_id', fromJson: jsonString)
   @HiveField(10)
   final String? categoryId;
 
   /// The IDs of the categories the VOD item belongs to.
-  @JsonKey(name: 'category_ids')
+  @JsonKey(name: 'category_ids', fromJson: jsonStringList)
   @HiveField(11)
-  final List<int>? categoryIds;
+  final List<String>? categoryIds;
 
   /// The container extension of the VOD item.
-  @JsonKey(name: 'container_extension')
+  @JsonKey(name: 'container_extension', fromJson: jsonString)
   @HiveField(12)
   final String? containerExtension;
 
   /// The custom SID of the VOD item.
-  @JsonKey(name: 'custom_sid')
+  @JsonKey(name: 'custom_sid', fromJson: jsonString)
   @HiveField(13)
   final String? customSid;
 
   /// The direct source of the VOD item.
-  @JsonKey(name: 'direct_source')
+  @JsonKey(name: 'direct_source', fromJson: jsonString)
   @HiveField(14)
   final String? directSource;
 

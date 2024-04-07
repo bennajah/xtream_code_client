@@ -31,72 +31,72 @@ class XTremeCodeLiveStreamItem extends HiveObject {
       _$XTremeCodeLiveStreamItemFromJson(json);
 
   /// The number of the live stream item.
-  @JsonKey(name: 'num')
+  @JsonKey(name: 'num', fromJson: jsonString)
   @HiveField(0)
-  final int? num;
+  final String? num;
 
   /// The name of the live stream item.
-  @JsonKey(name: 'name')
+  @JsonKey(name: 'name', fromJson: jsonString)
   @HiveField(1)
   final String? name;
 
   /// The type of the stream.
-  @JsonKey(name: 'stream_type')
+  @JsonKey(name: 'stream_type', fromJson: jsonString)
   @HiveField(2)
   final String? streamType;
 
   /// The ID of the stream.
-  @JsonKey(name: 'stream_id')
+  @JsonKey(name: 'stream_id', fromJson: jsonString)
   @HiveField(3)
-  final int streamId;
+  final String? streamId;
 
   /// The icon of the stream.
-  @JsonKey(name: 'stream_icon')
+  @JsonKey(name: 'stream_icon', fromJson: jsonString)
   @HiveField(4)
   final String? streamIcon;
 
   /// The ID of the EPG channel.
-  @JsonKey(name: 'epg_channel_id')
+  @JsonKey(name: 'epg_channel_id', fromJson: jsonString)
   @HiveField(5)
   final String? epgChannelId;
 
   /// The date when the live stream item was added.
-  @JsonKey(name: 'added', fromJson: dateTimeFromString)
+  @JsonKey(name: 'added', fromJson: jsonString)
   @HiveField(6)
-  final DateTime? added;
+  final String? added;
 
   /// The custom SID of the live stream item.
-  @JsonKey(name: 'custom_sid')
+  @JsonKey(name: 'custom_sid', fromJson: jsonString)
   @HiveField(7)
   final String? customSid;
 
   /// The TV archive of the live stream item.
-  @JsonKey(name: 'tv_archive')
+  @JsonKey(name: 'tv_archive', fromJson: jsonString)
   @HiveField(8)
-  final int? tvArchive;
+  final String? tvArchive;
 
   /// The direct source of the live stream item.
-  @JsonKey(name: 'direct_source')
+  @JsonKey(name: 'direct_source', fromJson: jsonString)
   @HiveField(9)
   final String? directSource;
 
   /// The duration of the TV archive.
-  @JsonKey(name: 'tv_archive_duration')
+  @JsonKey(name: 'tv_archive_duration', fromJson: jsonString)
   @HiveField(10)
-  final int? tvArchiveDuration;
+  final String? tvArchiveDuration;
 
   /// The ID of the category.
-  @JsonKey(name: 'category_id')
+  @JsonKey(name: 'category_id', fromJson: jsonString)
   @HiveField(11)
   final String? categoryId;
 
   /// The IDs of the categories.
-  @JsonKey(name: 'category_ids')
+  @JsonKey(name: 'category_ids', fromJson: jsonStringList)
   @HiveField(12)
-  final List<int>? categoryIds;
+  final List<String>? categoryIds;
 
   /// The thumbnail of the live stream item.
-  @JsonKey(name: 'thumbnail')
+  @JsonKey(name: 'thumbnail', fromJson: jsonString)
   @HiveField(13)
   final String? thumbnail;
 

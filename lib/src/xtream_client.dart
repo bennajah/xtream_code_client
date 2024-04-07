@@ -42,15 +42,15 @@ class XtreamCodeClient {
   final Client _http;
 
   /// The base URL getter for streaming an channel.
-  String streamUrl(int id, List<String> allowedInputFormat) =>
+  String streamUrl(String id, List<String> allowedInputFormat) =>
       '$_streamUrl/$id.${allowedInputFormat.firstWhere((format) => format == 'ts', orElse: () => allowedInputFormat.first)}';
 
   /// The base URL getter for streaming a movie.
-  String movieUrl(int id, String containerExtension) =>
+  String movieUrl(String id, String containerExtension) =>
       '$_movieUrl/$id.$containerExtension';
 
   /// The base URL getter for streaming a series.
-  String seriesUrl(int id, String containerExtension) =>
+  String seriesUrl(String id, String containerExtension) =>
       '$_seriesUrl/$id.$containerExtension';
 
   /// Authenticates the user and retrieves server & user information.
@@ -210,12 +210,12 @@ class XtreamCodeClient {
     XTremeCodeLiveStreamItem item,
     int? limit,
   ) async {
-    return channelEpgViaStreamId(item.streamId, limit);
+    return channelEpgViaStreamId(item.streamId ?? '', limit);
   }
 
   /// Retrieves EPG information for a specific live stream item.
   Future<XTremeCodeChannelEpg> channelEpgViaStreamId(
-    int streamId,
+    String streamId,
     int? limit,
   ) async {
     var action = 'get_short_epg&stream_id=$streamId';

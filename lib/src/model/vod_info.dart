@@ -71,127 +71,127 @@ class XTremeCodeInfoVod extends HiveObject {
       _$XTremeCodeInfoVodFromJson(json);
 
   /// The URL of the movie on Kinopoisk.
-  @JsonKey(name: 'kinopoisk_url')
+  @JsonKey(name: 'kinopoisk_url', fromJson: jsonString)
   @HiveField(0)
   final String? kinopoiskUrl;
 
   /// The ID of the movie in The Movie Database (TMDb).
-  @JsonKey(name: 'tmdb_id')
+  @JsonKey(name: 'tmdb_id', fromJson: jsonString)
   @HiveField(1)
-  final int? tmdbId;
+  final String? tmdbId;
 
   /// The name of the movie.
-  @JsonKey(name: 'name')
+  @JsonKey(name: 'name', fromJson: jsonString)
   @HiveField(2)
   final String? name;
 
   /// The original name of the movie.
-  @JsonKey(name: 'o_name')
+  @JsonKey(name: 'o_name', fromJson: jsonString)
   @HiveField(3)
   final String? oName;
 
   /// The big cover image of the movie.
-  @JsonKey(name: 'cover_big')
+  @JsonKey(name: 'cover_big', fromJson: jsonString)
   @HiveField(4)
   final String? coverBig;
 
   /// The image of the movie.
-  @JsonKey(name: 'movie_image')
+  @JsonKey(name: 'movie_image', fromJson: jsonString)
   @HiveField(5)
   final String? movieImage;
 
   /// The release date of the movie.
-  @JsonKey(name: 'release_date')
+  @JsonKey(name: 'release_date', fromJson: jsonString)
   @HiveField(6)
   final String? releaseDate;
 
   /// The runtime of the episode in minutes.
-  @JsonKey(name: 'episode_run_time')
+  @JsonKey(name: 'episode_run_time', fromJson: jsonString)
   @HiveField(7)
-  final int? episodeRunTime;
+  final String? episodeRunTime;
 
   /// The URL of the movie's trailer on YouTube.
-  @JsonKey(name: 'youtube_trailer')
+  @JsonKey(name: 'youtube_trailer', fromJson: jsonString)
   @HiveField(8)
   final String? youtubeTrailer;
 
   /// The director of the movie.
-  @JsonKey(name: 'director')
+  @JsonKey(name: 'director', fromJson: jsonString)
   @HiveField(9)
   final String? director;
 
   /// The actors in the movie.
-  @JsonKey(name: 'actors')
+  @JsonKey(name: 'actors', fromJson: jsonString)
   @HiveField(10)
   final String? actors;
 
   /// The cast of the movie.
-  @JsonKey(name: 'cast')
+  @JsonKey(name: 'cast', fromJson: jsonString)
   @HiveField(11)
   final String? cast;
 
   /// The description of the movie.
-  @JsonKey(name: 'description')
+  @JsonKey(name: 'description', fromJson: jsonString)
   @HiveField(12)
   final String? description;
 
   /// The plot of the movie.
-  @JsonKey(name: 'plot')
+  @JsonKey(name: 'plot', fromJson: jsonString)
   @HiveField(13)
   final String? plot;
 
   /// The age rating of the movie.
-  @JsonKey(name: 'age')
+  @JsonKey(name: 'age', fromJson: jsonString)
   @HiveField(14)
   final String? age;
 
   /// The MPAA rating of the movie.
-  @JsonKey(name: 'mpaa_rating')
+  @JsonKey(name: 'mpaa_rating', fromJson: jsonString)
   @HiveField(15)
   final String? mpaaRating;
 
   /// The rating count of the movie on Kinopoisk.
-  @JsonKey(name: 'rating_count_kinopoisk')
+  @JsonKey(name: 'rating_count_kinopoisk', fromJson: jsonString)
   @HiveField(16)
-  final int? ratingCountKinopoisk;
+  final String? ratingCountKinopoisk;
 
   /// The country where the movie was made.
-  @JsonKey(name: 'country')
+  @JsonKey(name: 'country', fromJson: jsonString)
   @HiveField(17)
   final String? country;
 
   /// The genre of the movie.
-  @JsonKey(name: 'genre')
+  @JsonKey(name: 'genre', fromJson: jsonString)
   @HiveField(18)
   final String? genre;
 
   /// The backdrop images of the movie.
-  @JsonKey(name: 'backdrop_path')
+  @JsonKey(name: 'backdrop_path', fromJson: jsonStringList)
   @HiveField(19)
   final List<String>? backdropPath;
 
   /// The duration of the movie in seconds.
-  @JsonKey(name: 'duration_secs')
+  @JsonKey(name: 'duration_secs', fromJson: jsonString)
   @HiveField(20)
-  final int? durationSecs;
+  final String? durationSecs;
 
   /// The duration of the movie.
-  @JsonKey(name: 'duration')
+  @JsonKey(name: 'duration', fromJson: jsonString)
   @HiveField(21)
   final String? duration;
 
   /// The bitrate of the movie.
-  @JsonKey(name: 'bitrate')
+  @JsonKey(name: 'bitrate', fromJson: jsonString)
   @HiveField(22)
-  final int? bitrate;
+  final String? bitrate;
 
   /// The rating of the movie.
-  @JsonKey(name: 'rating')
+  @JsonKey(name: 'rating', fromJson: jsonString)
   @HiveField(23)
-  final double? rating;
+  final String? rating;
 
   /// The release date of the movie.
-  @JsonKey(name: 'releasedate')
+  @JsonKey(name: 'releasedate', fromJson: jsonString)
   @HiveField(24)
   final String? releasedate;
 
@@ -227,52 +227,52 @@ class XTremeCodeMovieData extends HiveObject {
       _$XTremeCodeMovieDataFromJson(json);
 
   /// The stream ID of the movie.
-  @JsonKey(name: 'stream_id')
+  @JsonKey(name: 'stream_id', fromJson: jsonString)
   @HiveField(0)
-  final int streamId;
+  final String? streamId;
 
   /// The name of the movie.
-  @JsonKey(name: 'name')
+  @JsonKey(name: 'name', fromJson: jsonString)
   @HiveField(1)
   final String? name;
 
   /// The title of the movie.
-  @JsonKey(name: 'title')
+  @JsonKey(name: 'title', fromJson: jsonString)
   @HiveField(2)
   final String? title;
 
   /// The year the movie was released.
-  @JsonKey(name: 'year')
+  @JsonKey(name: 'year', fromJson: jsonString)
   @HiveField(3)
   final String? year;
 
   /// The date the movie was added.
-  @JsonKey(name: 'added', fromJson: dateTimeFromString)
+  @JsonKey(name: 'added', fromJson: jsonString)
   @HiveField(4)
-  final DateTime? added;
+  final String? added;
 
   /// The ID of the category the movie belongs to.
-  @JsonKey(name: 'category_id')
+  @JsonKey(name: 'category_id', fromJson: jsonString)
   @HiveField(5)
   final String? categoryId;
 
   /// The IDs of the categories the movie belongs to.
-  @JsonKey(name: 'category_ids')
+  @JsonKey(name: 'category_ids', fromJson: jsonStringList)
   @HiveField(6)
-  final List<int>? categoryIds;
+  final List<String>? categoryIds;
 
   /// The container extension of the movie.
-  @JsonKey(name: 'container_extension')
+  @JsonKey(name: 'container_extension', fromJson: jsonString)
   @HiveField(7)
   final String? containerExtension;
 
   /// The custom SID of the movie.
-  @JsonKey(name: 'custom_sid')
+  @JsonKey(name: 'custom_sid', fromJson: jsonString)
   @HiveField(8)
   final String? customSid;
 
   /// The direct source of the movie.
-  @JsonKey(name: 'direct_source')
+  @JsonKey(name: 'direct_source', fromJson: jsonString)
   @HiveField(9)
   final String? directSource;
 

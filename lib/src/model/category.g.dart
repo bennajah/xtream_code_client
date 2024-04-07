@@ -19,7 +19,7 @@ class XTremeCodeCategoryAdapter extends TypeAdapter<XTremeCodeCategory> {
     return XTremeCodeCategory(
       categoryId: fields[0] as String?,
       categoryName: fields[1] as String?,
-      parentId: fields[2] as int?,
+      parentId: fields[2] as String?,
     );
   }
 
@@ -52,9 +52,9 @@ class XTremeCodeCategoryAdapter extends TypeAdapter<XTremeCodeCategory> {
 
 XTremeCodeCategory _$XTremeCodeCategoryFromJson(Map<String, dynamic> json) =>
     XTremeCodeCategory(
-      categoryId: json['category_id'] as String?,
-      categoryName: json['category_name'] as String?,
-      parentId: json['parent_id'] as int?,
+      categoryId: jsonString(json['category_id']),
+      categoryName: jsonString(json['category_name']),
+      parentId: jsonString(json['parent_id']),
     );
 
 Map<String, dynamic> _$XTremeCodeCategoryToJson(XTremeCodeCategory instance) =>

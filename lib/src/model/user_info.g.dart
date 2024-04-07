@@ -20,12 +20,12 @@ class XTremeCodeUserInfoAdapter extends TypeAdapter<XTremeCodeUserInfo> {
       username: fields[0] as String?,
       password: fields[1] as String?,
       message: fields[2] as String?,
-      auth: fields[3] as int?,
+      auth: fields[3] as String?,
       status: fields[4] as String?,
-      expDate: fields[5] as DateTime?,
+      expDate: fields[5] as String?,
       isTrial: fields[6] as String?,
       activeCons: fields[7] as String?,
-      createdAt: fields[8] as DateTime?,
+      createdAt: fields[8] as String?,
       maxConnections: fields[9] as String?,
       allowedOutputFormats: (fields[10] as List?)?.cast<String>(),
     );
@@ -76,19 +76,18 @@ class XTremeCodeUserInfoAdapter extends TypeAdapter<XTremeCodeUserInfo> {
 
 XTremeCodeUserInfo _$XTremeCodeUserInfoFromJson(Map<String, dynamic> json) =>
     XTremeCodeUserInfo(
-      username: json['username'] as String?,
-      password: json['password'] as String?,
-      message: json['message'] as String?,
-      auth: json['auth'] as int?,
-      status: json['status'] as String?,
-      expDate: dateTimeFromEpochSeconds(json['exp_date'] as String?),
-      isTrial: json['is_trial'] as String?,
-      activeCons: json['active_cons'] as String?,
-      createdAt: dateTimeFromEpochSeconds(json['created_at'] as String?),
-      maxConnections: json['max_connections'] as String?,
-      allowedOutputFormats: (json['allowed_output_formats'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      username: jsonString(json['username']),
+      password: jsonString(json['password']),
+      message: jsonString(json['message']),
+      auth: jsonString(json['auth']),
+      status: jsonString(json['status']),
+      expDate: jsonString(json['exp_date']),
+      isTrial: jsonString(json['is_trial']),
+      activeCons: jsonString(json['active_cons']),
+      createdAt: jsonString(json['created_at']),
+      maxConnections: jsonString(json['max_connections']),
+      allowedOutputFormats:
+          jsonStringList(json['allowed_output_formats'] as List?),
     );
 
 Map<String, dynamic> _$XTremeCodeUserInfoToJson(XTremeCodeUserInfo instance) =>
@@ -98,10 +97,10 @@ Map<String, dynamic> _$XTremeCodeUserInfoToJson(XTremeCodeUserInfo instance) =>
       'message': instance.message,
       'auth': instance.auth,
       'status': instance.status,
-      'exp_date': instance.expDate?.toIso8601String(),
+      'exp_date': instance.expDate,
       'is_trial': instance.isTrial,
       'active_cons': instance.activeCons,
-      'created_at': instance.createdAt?.toIso8601String(),
+      'created_at': instance.createdAt,
       'max_connections': instance.maxConnections,
       'allowed_output_formats': instance.allowedOutputFormats,
     };

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 /// Converts a string of seconds since Epoch (1970-01-01T00:00:00Z) to a
 /// [DateTime].
 /// Returns null if [seconds] is null or empty.
@@ -21,3 +23,10 @@ DateTime? dateTimeFromString(String? dateTime) =>
 /// Converts an integer to a boolean.
 /// Returns true if [value] is 1, otherwise returns false.
 bool intToBool(int value) => value == 1;
+
+/// Function to convert a dynamic value to a nullable String
+String? jsonString(dynamic value) => value?.toString();
+
+/// Function to convert a List<dynamic> to List<String>
+List<String>? jsonStringList(List<dynamic>? value) =>
+    value?.map((item) => item.toString()).toList();

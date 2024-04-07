@@ -28,57 +28,57 @@ class XTremeCodeServerInfo extends HiveObject {
       _$XTremeCodeServerInfoFromJson(json);
 
   /// The XUI of the server.
-  @JsonKey(name: 'xui')
+  @JsonKey(name: 'xui', fromJson: jsonString)
   @HiveField(0)
-  final bool? xui;
+  final String? xui;
 
   /// The version of the server.
-  @JsonKey(name: 'version')
+  @JsonKey(name: 'version', fromJson: jsonString)
   @HiveField(1)
   final String? version;
 
   /// The revision of the server.
-  @JsonKey(name: 'revision')
+  @JsonKey(name: 'revision', fromJson: jsonString)
   @HiveField(2)
-  final int? revision;
+  final String? revision;
 
   /// The URL of the server.
-  @JsonKey(name: 'url')
+  @JsonKey(name: 'url', fromJson: jsonString)
   @HiveField(3)
   final String? url;
 
   /// The port of the server.
-  @JsonKey(name: 'port')
+  @JsonKey(name: 'port', fromJson: jsonString)
   @HiveField(4)
   final String? port;
 
   /// The HTTPS port of the server.
-  @JsonKey(name: 'https_port')
+  @JsonKey(name: 'https_port', fromJson: jsonString)
   @HiveField(5)
   final String? httpsPort;
 
   /// The protocol of the server.
-  @JsonKey(name: 'server_protocol')
+  @JsonKey(name: 'server_protocol', fromJson: jsonString)
   @HiveField(6)
   final String? serverProtocol;
 
   /// The RTMP port of the server.
-  @JsonKey(name: 'rtmp_port')
+  @JsonKey(name: 'rtmp_port', fromJson: jsonString)
   @HiveField(7)
   final String? rtmpPort;
 
   /// The current timestamp of the server.
-  @JsonKey(name: 'timestamp_now', fromJson: dateTimeFromEpochSecondsInt)
+  @JsonKey(name: 'timestamp_now', fromJson: jsonString)
   @HiveField(8)
-  final DateTime? timestampNow;
+  final String? timestampNow;
 
   /// The current time of the server.
-  @JsonKey(name: 'time_now', fromJson: dateTimeFromString)
+  @JsonKey(name: 'time_now', fromJson: jsonString)
   @HiveField(9)
-  final DateTime? timeNow;
+  final String? timeNow;
 
   /// The timezone of the server.
-  @JsonKey(name: 'timezone')
+  @JsonKey(name: 'timezone', fromJson: jsonString)
   @HiveField(10)
   final String? timezone;
 

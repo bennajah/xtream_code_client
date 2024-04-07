@@ -17,16 +17,16 @@ class XTremeCodeServerInfoAdapter extends TypeAdapter<XTremeCodeServerInfo> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return XTremeCodeServerInfo(
-      xui: fields[0] as bool?,
+      xui: fields[0] as String?,
       version: fields[1] as String?,
-      revision: fields[2] as int?,
+      revision: fields[2] as String?,
       url: fields[3] as String?,
       port: fields[4] as String?,
       httpsPort: fields[5] as String?,
       serverProtocol: fields[6] as String?,
       rtmpPort: fields[7] as String?,
-      timestampNow: fields[8] as DateTime?,
-      timeNow: fields[9] as DateTime?,
+      timestampNow: fields[8] as String?,
+      timeNow: fields[9] as String?,
       timezone: fields[10] as String?,
     );
   }
@@ -77,17 +77,17 @@ class XTremeCodeServerInfoAdapter extends TypeAdapter<XTremeCodeServerInfo> {
 XTremeCodeServerInfo _$XTremeCodeServerInfoFromJson(
         Map<String, dynamic> json) =>
     XTremeCodeServerInfo(
-      xui: json['xui'] as bool?,
-      version: json['version'] as String?,
-      revision: json['revision'] as int?,
-      url: json['url'] as String?,
-      port: json['port'] as String?,
-      httpsPort: json['https_port'] as String?,
-      serverProtocol: json['server_protocol'] as String?,
-      rtmpPort: json['rtmp_port'] as String?,
-      timestampNow: dateTimeFromEpochSecondsInt(json['timestamp_now'] as int?),
-      timeNow: dateTimeFromString(json['time_now'] as String?),
-      timezone: json['timezone'] as String?,
+      xui: jsonString(json['xui']),
+      version: jsonString(json['version']),
+      revision: jsonString(json['revision']),
+      url: jsonString(json['url']),
+      port: jsonString(json['port']),
+      httpsPort: jsonString(json['https_port']),
+      serverProtocol: jsonString(json['server_protocol']),
+      rtmpPort: jsonString(json['rtmp_port']),
+      timestampNow: jsonString(json['timestamp_now']),
+      timeNow: jsonString(json['time_now']),
+      timezone: jsonString(json['timezone']),
     );
 
 Map<String, dynamic> _$XTremeCodeServerInfoToJson(
@@ -101,7 +101,7 @@ Map<String, dynamic> _$XTremeCodeServerInfoToJson(
       'https_port': instance.httpsPort,
       'server_protocol': instance.serverProtocol,
       'rtmp_port': instance.rtmpPort,
-      'timestamp_now': instance.timestampNow?.toIso8601String(),
-      'time_now': instance.timeNow?.toIso8601String(),
+      'timestamp_now': instance.timestampNow,
+      'time_now': instance.timeNow,
       'timezone': instance.timezone,
     };
